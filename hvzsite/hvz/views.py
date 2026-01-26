@@ -275,14 +275,14 @@ def create_report(request):
             report_id = report.report_uuid
             form = ReportForm(authenticated=request.user.is_authenticated)
             if report_webhook:
-                report_webhook.send("!report " +
+                report_webhook.send("!report \n" +
                                     json.dumps({
                                         'report_text': report.report_text, 
                                         'reporter_email': report.reporter_email,
                                         'reporter': str(report.reporter),
                                         'timestamp': str(report.timestamp),
                                         # 'picture' = models.ImageField(upload_to='report_images/', null=True, blank=True)
-                                    }))
+                                    }, indent=2))
         else:
             messages.error(request, "Unsuccessful report. Invalid information.")
     else:
