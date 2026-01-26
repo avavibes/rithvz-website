@@ -11,3 +11,4 @@ hvzsite/static/team_pictures/*
 hvzsite/static_root
 hvzsite/media*
 hvzsite/config.json
+hvzsite/hvz.log
